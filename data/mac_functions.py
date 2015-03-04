@@ -4,7 +4,13 @@ import json
 import pandas
 import numpy as np
 
-"""Convert a csv file with columns node1,node2,weight,time1,time2 to json for d3"""
+"""Perform Hungarian"""
+def do_hungarian(matrix):
+  print "MAC: write function here to perform hungarian and return the csv file"
+
+
+
+"""Convert a csv file with columns node1,node2,weight,time1,time2 to json"""
 def prepare_json(input_file,output_file):
   data = pandas.read_csv(input_file)
   # Get unique nodes
