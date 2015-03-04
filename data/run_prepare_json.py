@@ -1,10 +1,9 @@
 #!/usr/bin/python
 
-import os
 from glob import glob
 from mac_functions import prepare_json
 
-input_files = glob("/home/vanessa/Documents/Dropbox/Code/Javascript/mac/mac/data/*.csv")
+input_files = glob("/home/vanessa/Documents/Dropbox/Code/Javascript/mac/data/*.csv")
 
 for ii in input_files:
   output_file = ii.replace(".csv",".json")
