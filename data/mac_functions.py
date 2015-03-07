@@ -1,12 +1,32 @@
 #!/usr/bin/python
 
 import json
+import random
 import pandas
 import numpy as np
 
 """Perform Hungarian"""
 def do_hungarian(matrix):
   print "MAC: write function here to perform hungarian and return the csv file"
+
+
+'''Generate random unique colors for data, write as column in file'''
+def random_colors(N):
+  colors = []
+  for x in range(0,N):
+    r = lambda: random.randint(0,255)
+    colors.append('#%02X%02X%02X' % (r(),r(),r()))
+  return colors
+
+"""Generate a list of colors for maximum number of modules across data"""
+def make_color_string(input_files):
+  max_modules = 0
+  for ii in input_files:
+    data = pandas.read_csv(input_file)
+    number_nodes = len(np.unique(data.node1.tolist() + data.node2.tolist()))
+    if number_nodes > max_modules: max_modules = number_nodes
+  colors = random_colors(max_modules)
+  return '["%s"]' %('","'.join(colors))
 
 """Remove rows of zeros from input files from matlab"""
 def remove_zeros(input_file,add_col_labels=True):
