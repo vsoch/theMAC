@@ -22,7 +22,7 @@ def random_colors(N):
 def make_color_string(input_files):
   max_modules = 0
   for ii in input_files:
-    data = pandas.read_csv(input_file)
+    data = pandas.read_csv(ii)
     number_nodes = len(np.unique(data.node1.tolist() + data.node2.tolist()))
     if number_nodes > max_modules: max_modules = number_nodes
   colors = random_colors(max_modules)
