@@ -72,7 +72,7 @@ function visualizeMAC(data){
      // top right bottom left
      var m = [20, 15, 15, 120],
 	 w = 20000 - m[1] - m[3],
-	 h = 10000 - m[0] - m[2],
+	 h = 1500 - m[0] - m[2],
 	 macHeight = h - 50;
      
      // scales
